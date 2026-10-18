@@ -1,0 +1,242 @@
+/* Estilos Generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #fdfbf7;
+    color: #4a3b32;
+}
+
+/* 1. Cabecera Fija (Requerido en la rúbrica) */
+.header-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #d18861;
+    text-decoration: none;
+    font-style: italic;
+}
+
+.menu-list {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.menu-list a {
+    text-decoration: none;
+    color: #4a3b32;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.menu-list a:hover, .menu-list a.active {
+    color: #d18861;
+}
+
+/* 2. Portada (index.html) */
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../imagenes/portada_dulce_tentacion.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin-bottom: 25px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    color: #4a3b32;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+}
+
+.social-icons a:hover {
+    background-color: #d18861;
+    color: #fff;
+}
+
+/* 3. Contenido de páginas internas */
+.main-content {
+    max-width: 900px;
+    margin: 120px auto 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.main-content h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #d18861;
+}
+
+/* Blog Autor y Estilos */
+.blog-main-img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.author-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.author-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #d18861;
+}
+
+.author-info h3 {
+    font-size: 1rem;
+    color: #333;
+}
+
+.author-role, time {
+    font-size: 0.85rem;
+    color: #777;
+    display: block;
+}
+
+.blog-article p {
+    line-height: 1.7;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+/* 4. Galería con Flexbox y Hover (Requerido) */
+.gallery-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.gallery-item {
+    width: calc(33.333% - 20px);
+    background: #fafafa;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* Efecto Hover en imágenes de galería */
+.gallery-item img:hover {
+    transform: scale(1.08);
+    filter: brightness(1.15);
+}
+
+.gallery-item p {
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* 5. Videos Responsivos */
+.video-container {
+    position: relative;
+    padding-bottom: 56.5%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.site-footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+/* Adaptabilidad para celulares (Media Queries) */
+@media (max-width: 768px) {
+    .menu-list {
+        display: none; /* Simplificado para pantallas pequeñas */
+    }
+    .gallery-item {
+        width: calc(50% - 15px);
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+}
